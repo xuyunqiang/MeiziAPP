@@ -23,3 +23,24 @@
 那为什么不试着使用 MVP 去对代码进行进一步的优化呢，所以整个项目使用了 MVP 架构，将所有的数据请求、业务逻辑都提取到 Presenter 层中。同时加入了Dagger依赖注入，极大地方便了程序的开发，且对测试也很有帮助
 使用 MVP 后需要为每一个 Activity 编写一个对应一个 Presenter(控制器)类，让 Activity 担当纯粹的 View 角色，
 这样 Activity 就主要负责一些界面更新操作，具体的业务逻辑都交托给 Presenter 层处理，代码结构因此也变得更加清晰。
+
+### License
+
+    /*
+     *       
+     * Copyright (C) 2015 Drakeet <drakeet.me@gmail.com>
+     * Copyright (C) 2015 Xuyunqiang <1539140295@qq.com>
+     *
+     * Meizhi is free software: you can redistribute it and/or modify
+     * it under the terms of the GNU General Public License as published by
+     * the Free Software Foundation, either version 3 of the License, or
+     * (at your option) any later version.
+     *
+     * Meizhi is distributed in the hope that it will be useful,
+     * but WITHOUT ANY WARRANTY; without even the implied warranty of
+     * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     * GNU General Public License for more details.
+     *
+     * You should have received a copy of the GNU General Public License
+     * along with Meizhi.  If not, see <http://www.gnu.org/licenses/>.
+     */
