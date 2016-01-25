@@ -24,6 +24,23 @@
 使用 MVP 后需要为每一个 Activity 编写一个对应一个 Presenter(控制器)类，让 Activity 担当纯粹的 View 角色，
 这样 Activity 就主要负责一些界面更新操作，具体的业务逻辑都交托给 Presenter 层处理，代码结构因此也变得更加清晰。
 
+
+###依赖库   
+
+* [RxJava](https://github.com/ReactiveX/RxJava) 
+* [OkHttp](https://github.com/square/okhttp)
+* [Picasso](https://github.com/square/picasso)
+* [Retrofit](https://github.com/square/retrofit)
+* [Butterknife](https://github.com/JakeWharton/butterknife)
+* [Logger](https://github.com/orhanobut/logger)
+
+###参考资料
+
+* [drakeet/Meizhi](https://github.com/drakeet/Meizhi)
+* [浅谈 MVP in Android](http://blog.csdn.net/lmj623565791/article/details/46596109)
+* [Effective Android UI](https://github.com/pedrovgs/EffectiveAndroidUI)
+
+
 ### License
 
     /*
