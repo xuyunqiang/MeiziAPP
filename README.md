@@ -1,6 +1,6 @@
 ###MeiziAPP
 
-![icon](/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png "")
+![icon](/app/src/main/res/mipmap-xxxhdpi/ic_launcher.jpg "")
 
 每日提供技术干货的App
 
