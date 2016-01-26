@@ -48,9 +48,9 @@ public class MainPresenter extends BasePresenter<IMainView> {
         return mCurrentPage <= 2;
     }
 
-    public void refillGirls() {
+    public void refillGirls(String tag) {
 
-        addSubscription( mDataManager.getGirls(PAGE_SIZE, mCurrentPage)
+        addSubscription( mDataManager.getGirls(tag,PAGE_SIZE, mCurrentPage)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(new Subscriber<List<Girl>>() {
@@ -82,9 +82,9 @@ public class MainPresenter extends BasePresenter<IMainView> {
                 }));
     }
 
-    public void getDataMore() {
+    public void getDataMore(String tag) {
 
-        Subscription subscription = mDataManager.getGirls(PAGE_SIZE, mCurrentPage)
+        Subscription subscription = mDataManager.getGirls(tag,PAGE_SIZE, mCurrentPage)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                         //可以在接收事件之前，在主线程中执行初始化代码

@@ -1,10 +1,8 @@
 package com.yunq.gankio.injection.module;
 
 import android.app.Application;
-import android.content.Context;
 
 import com.squareup.okhttp.OkHttpClient;
-import com.yunq.gankio.injection.ApplicationContext;
 
 import javax.inject.Singleton;
 
@@ -27,11 +25,11 @@ public class ApplicationModule {
         return mApplication;
     }
 
-    @Provides
-    @ApplicationContext
-    Context provideContext() {
-        return mApplication;
-    }
+//    @Provides
+//   // @ApplicationContext
+//    Context provideContext() {
+//        return mApplication;
+//    }
 
     @Provides
     @Singleton

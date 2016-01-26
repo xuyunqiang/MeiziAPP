@@ -1,9 +1,5 @@
 package com.yunq.gankio.injection.module;
 
-import android.content.Context;
-
-import com.yunq.gankio.injection.Activity;
-
 import dagger.Module;
 import dagger.Provides;
 
@@ -13,15 +9,20 @@ import dagger.Provides;
 @Module
 public class ActivityModule {
 
-    private final Context mContext;
+    private android.app.Activity mActivity;
 
-    public ActivityModule(Context context) {
-        mContext = context;
+    public ActivityModule(android.app.Activity activity) {
+        mActivity = activity;
     }
 
     @Provides
-    @Activity
-    Context provideContext() {
-        return mContext;
+    android.app.Activity provideActivity() {
+        return mActivity;
     }
+
+//    @Provides
+//    //@ActivityContext
+//    Context provideContext() {
+//        return mActivity;
+//    }
 }

@@ -4,7 +4,6 @@ import com.yunq.gankio.DataManager;
 import com.yunq.gankio.data.entity.Gank;
 import com.yunq.gankio.presenter.view.IGankDetailView;
 
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -26,14 +25,8 @@ public class GankDetailPresenter extends BasePresenter<IGankDetailView> {
         mDataManager = dataManager;
     }
 
-    public void getData(Date date) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
-//        int year = calendar.get(Calendar.YEAR);
-//        int month = calendar.get(Calendar.MONTH) + 1;
-//        int day = calendar.get(Calendar.DAY_OF_MONTH);
-
-        mDataManager.getGankData(date)
+    public void getData(String tag,Date date) {
+        addSubscription(mDataManager.getGankData(tag,date)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(new Subscriber<List<Gank>>() {
@@ -56,7 +49,7 @@ public class GankDetailPresenter extends BasePresenter<IGankDetailView> {
                         }
                         mView.getDataFinish();
                     }
-                });
+                }));
 
 
     }

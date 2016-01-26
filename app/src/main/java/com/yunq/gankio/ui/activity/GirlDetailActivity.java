@@ -26,6 +26,7 @@ import javax.inject.Inject;
 import butterknife.Bind;
 
 public class GirlDetailActivity extends BaseSwipeRefreshActivity implements IGankDetailView<Gank> {
+    private static final String TAG = GirlDetailActivity.class.getSimpleName();
     private static final String EXTRA_BUNDLE_DATE = "BUNDLE_DATE";
 
     @Bind(R.id.rv_gank)
@@ -85,7 +86,7 @@ public class GirlDetailActivity extends BaseSwipeRefreshActivity implements IGan
     }
 
     private void initData() {
-        mPresenter.getData(mDate);
+        mPresenter.getData(TAG,mDate);
     }
 
     @Override

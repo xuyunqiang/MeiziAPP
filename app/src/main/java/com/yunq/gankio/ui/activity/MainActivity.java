@@ -29,6 +29,8 @@ import butterknife.Bind;
 
 public class MainActivity extends BaseSwipeRefreshActivity implements IMainView<Girl>, MainListAdapter.IClickItem {
 
+    private static final String TAG = MainActivity.class.getSimpleName();
+
     @Bind(R.id.rcv_index_content)
     RecyclerView mRcvIndexContent;
 
@@ -83,7 +85,7 @@ public class MainActivity extends BaseSwipeRefreshActivity implements IMainView<
                 if (!mSwipeRefreshLayout.isRefreshing() && isBottom && mHasMoreData) {
                     if (!mIsFirstTimeTouchBottom) {
                         showRefresh();
-                        mPresenter.getDataMore();
+                        mPresenter.getDataMore(TAG);
                     } else {
                         mIsFirstTimeTouchBottom = false;
                     }
@@ -102,7 +104,7 @@ public class MainActivity extends BaseSwipeRefreshActivity implements IMainView<
             }
         }, 558);
 
-        mPresenter.refillGirls();
+        mPresenter.refillGirls(TAG);
     }
 
     @Override
@@ -180,7 +182,7 @@ public class MainActivity extends BaseSwipeRefreshActivity implements IMainView<
 
     @Override
     protected void onRefreshStarted() {
-        mPresenter.refillGirls();
+        mPresenter.refillGirls(TAG);
     }
 
 

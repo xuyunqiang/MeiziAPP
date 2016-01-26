@@ -12,6 +12,7 @@ import retrofit.Retrofit;
 import retrofit.RxJavaCallAdapterFactory;
 import retrofit.http.GET;
 import retrofit.http.Path;
+import retrofit.http.Query;
 import rx.Observable;
 
 /**
@@ -25,13 +26,13 @@ public interface MeiziService {
     String HOST = "http://gank.avosapps.com/api/";
 
     @GET("data/福利/{pageSize}/{page}")
-    Observable<PrettyGirlData> getPrettyGirlData(@Path("pageSize") int pageSize, @Path("page") int page);
+    Observable<PrettyGirlData> getPrettyGirlData(@Path("pageSize") int pageSize, @Path("page") int page,@Query("TAG") String tag);
 
     @GET("data/休息视频/{pageSize}/{page}")
-    Observable<休息视频Data> get休息视频Data(@Path("pageSize") int pageSize, @Path("page") int page);
+    Observable<休息视频Data> get休息视频Data(@Path("pageSize") int pageSize, @Path("page") int page,@Query("TAG") String tag);
 
     @GET("day/{year}/{month}/{day}")
-    Observable<GankData> getGankData(@Path("year") int year, @Path("month") int month, @Path("day") int day);
+    Observable<GankData> getGankData(@Path("year") int year, @Path("month") int month, @Path("day") int day,@Query("TAG") String tag);
 
     class Creator {
         public static MeiziService newGudongService(OkHttpClient client) {

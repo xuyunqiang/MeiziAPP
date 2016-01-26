@@ -30,7 +30,7 @@ public class DataUtils {
         return girlData;
     }
 
-    //GankDetailActivity相关
+    //GirlDetailActivity相关
     public static List<Gank> addAllResults(GankData.Result results) {
         List<Gank> mGankList = new ArrayList<>();
         if (results.androidList != null) mGankList.addAll(results.androidList);

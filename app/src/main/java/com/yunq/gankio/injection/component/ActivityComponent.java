@@ -1,7 +1,5 @@
 package com.yunq.gankio.injection.component;
 
-import android.content.Context;
-
 import com.yunq.gankio.injection.Activity;
 import com.yunq.gankio.injection.module.ActivityModule;
 
@@ -13,5 +11,6 @@ import dagger.Component;
 @Activity
 @Component(dependencies = ApplicationComponent.class, modules = ActivityModule.class)
 public interface ActivityComponent {
-    Context context();
+   // @ActivityContext
+    android.app.Activity activity();
 }

@@ -1,5 +1,6 @@
 package com.yunq.gankio.presenter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -33,7 +34,7 @@ public class GirlFacePresenter extends BasePresenter<IGirlFaceView> {
     private Context mContext;
 
     @Inject
-    public GirlFacePresenter(Context context,DataManager dataManager){
+    public GirlFacePresenter(Activity context,DataManager dataManager){
         mContext =  context;
         mDataManager = dataManager;
     }
