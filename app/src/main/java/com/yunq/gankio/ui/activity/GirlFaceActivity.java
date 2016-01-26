@@ -19,7 +19,6 @@ import com.yunq.gankio.util.ToastUtils;
 import javax.inject.Inject;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 import uk.co.senab.photoview.PhotoViewAttacher;
 
 public class GirlFaceActivity extends BaseActivity implements IGirlFaceView {
@@ -100,9 +99,8 @@ public class GirlFaceActivity extends BaseActivity implements IGirlFaceView {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mPresenter.detachView();
         Picasso.with(this).cancelRequest(mIvGrilDetail);
-        ButterKnife.unbind(this);
+        mPresenter.detachView();
     }
 
 

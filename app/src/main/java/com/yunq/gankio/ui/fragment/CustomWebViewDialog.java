@@ -2,6 +2,7 @@ package com.yunq.gankio.ui.fragment;
 
 
 import android.app.Dialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
@@ -30,6 +31,8 @@ public class CustomWebViewDialog extends DialogFragment implements ICustomDialog
 
     @Inject
     CustomDialogPresenter mPresenter;
+    @Inject
+    Context mContext;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -63,6 +66,7 @@ public class CustomWebViewDialog extends DialogFragment implements ICustomDialog
     @Override
     public void onDestroy() {
         super.onDestroy();
+        GankApp.get(mContext).getRefWatcher().watch(this);
         mPresenter.detachView();
     }
 }

@@ -1,4 +1,4 @@
-package com.yunq.gankio.data;
+package com.yunq.gankio.data.parse;
 
 import com.google.gson.annotations.SerializedName;
 import com.yunq.gankio.data.entity.Gank;

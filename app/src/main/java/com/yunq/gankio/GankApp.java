@@ -4,36 +4,45 @@ import android.app.Application;
 import android.content.Context;
 import android.os.StrictMode;
 
-import com.orhanobut.logger.LogLevel;
-import com.orhanobut.logger.Logger;
+import com.squareup.leakcanary.LeakCanary;
+import com.squareup.leakcanary.RefWatcher;
 import com.yunq.gankio.injection.component.ApplicationComponent;
 import com.yunq.gankio.injection.component.DaggerApplicationComponent;
 import com.yunq.gankio.injection.module.ApplicationModule;
+
+import timber.log.Timber;
 
 
 /**
  * Created by admin on 16/1/5.
  */
 public class GankApp extends Application {
+
+    private RefWatcher refWatcher;
+
     ApplicationComponent mApplicationComponent;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        //只有在调试模式下 才启用日志输出
+        refWatcher = LeakCanary.install(this);
+
         if (BuildConfig.DEBUG) {
+            //警告在主线程中执行耗时操作
             StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build());
             StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectAll().penaltyLog().build());
 
-            Logger.init("Gank").hideThreadInfo().setMethodCount(0);
-        } else {
-            Logger.init("Gank").setLogLevel(LogLevel.NONE);
+            Timber.plant(new Timber.DebugTree());
         }
 
     }
 
     public static GankApp get(Context context) {
         return (GankApp) context.getApplicationContext();
+    }
+
+    public RefWatcher getRefWatcher() {
+        return refWatcher;
     }
 
     public ApplicationComponent getComponent() {

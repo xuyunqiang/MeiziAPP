@@ -1,4 +1,4 @@
-package com.yunq.gankio;
+package com.yunq.gankio.data;
 
 import android.app.Application;
 import android.content.Context;
@@ -6,11 +6,11 @@ import android.content.Context;
 import com.squareup.okhttp.Cache;
 import com.squareup.okhttp.OkHttpClient;
 import com.yunq.gankio.core.MeiziService;
-import com.yunq.gankio.data.GankData;
-import com.yunq.gankio.data.PrettyGirlData;
+import com.yunq.gankio.data.parse.GankData;
+import com.yunq.gankio.data.parse.PrettyGirlData;
 import com.yunq.gankio.data.entity.Gank;
 import com.yunq.gankio.data.entity.Girl;
-import com.yunq.gankio.data.休息视频Data;
+import com.yunq.gankio.data.parse.休息视频Data;
 import com.yunq.gankio.util.HttpUtils;
 
 import java.util.Calendar;

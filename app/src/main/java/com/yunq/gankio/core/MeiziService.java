@@ -3,9 +3,9 @@ package com.yunq.gankio.core;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.squareup.okhttp.OkHttpClient;
-import com.yunq.gankio.data.GankData;
-import com.yunq.gankio.data.PrettyGirlData;
-import com.yunq.gankio.data.休息视频Data;
+import com.yunq.gankio.data.parse.GankData;
+import com.yunq.gankio.data.parse.PrettyGirlData;
+import com.yunq.gankio.data.parse.休息视频Data;
 
 import retrofit.GsonConverterFactory;
 import retrofit.Retrofit;

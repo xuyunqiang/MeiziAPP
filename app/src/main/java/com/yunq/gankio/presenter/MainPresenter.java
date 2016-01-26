@@ -1,6 +1,6 @@
 package com.yunq.gankio.presenter;
 
-import com.yunq.gankio.DataManager;
+import com.yunq.gankio.data.DataManager;
 import com.yunq.gankio.data.entity.Girl;
 import com.yunq.gankio.presenter.view.IMainView;
 

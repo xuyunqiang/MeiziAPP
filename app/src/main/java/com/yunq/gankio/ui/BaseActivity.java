@@ -6,6 +6,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.yunq.gankio.GankApp;
 import com.yunq.gankio.R;
 
 import butterknife.Bind;
@@ -23,20 +24,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected abstract int getMenuRes();
 
-    protected  void initPresenter(){}
-
-//    protected D getActivityComponent() {
-//        if (mActivityComponent == null) {
-//            mActivityComponent = (D) DaggerActivityComponent.builder()
-//                    .activityModule(new ActivityModule(this))
-//                    .applicationComponent(GankApp.get(this).getComponent())
-//                    .build();
-//        }
-//        return mActivityComponent;
-//    }
-
     protected abstract void initInjection();
-
 
 
     final private void initToolBar() {
@@ -51,8 +39,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(getLayout());
         ButterKnife.bind(this);
-      //  initPresenter();
-      //  checkPresenterIsNull();
+        initInjection();
         initToolBar();
     }
 
@@ -76,5 +63,12 @@ public abstract class BaseActivity extends AppCompatActivity {
         setTitle(tilte);
         getSupportActionBar().setDisplayHomeAsUpEnabled(showHome);
         getSupportActionBar().setDisplayShowHomeEnabled(showHome);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ButterKnife.unbind(this);
+        GankApp.get(this).getRefWatcher().watch(this);
     }
 }

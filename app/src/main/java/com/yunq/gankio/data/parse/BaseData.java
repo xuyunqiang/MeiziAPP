@@ -1,4 +1,4 @@
-package com.yunq.gankio.data;
+package com.yunq.gankio.data.parse;
 
 /**
  * Created by admin on 16/1/5.

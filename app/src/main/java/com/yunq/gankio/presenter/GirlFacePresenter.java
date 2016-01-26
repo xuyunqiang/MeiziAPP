@@ -11,9 +11,9 @@ import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.widget.ImageView;
 
-import com.orhanobut.logger.Logger;
+
 import com.squareup.picasso.Picasso;
-import com.yunq.gankio.DataManager;
+import com.yunq.gankio.data.DataManager;
 import com.yunq.gankio.R;
 import com.yunq.gankio.presenter.view.IGirlFaceView;
 import com.yunq.gankio.util.TaskUtils;
@@ -24,6 +24,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 import javax.inject.Inject;
+
+import timber.log.Timber;
 
 /**
  * Created by admin on 16/1/6.
@@ -69,9 +71,9 @@ public class GirlFacePresenter extends BasePresenter<IGirlFaceView> {
                 File appDir = new File(getSDPath(), "Meizhi");
                 if (!appDir.exists()) {
                     if (appDir.mkdirs()) {
-                        Logger.i("create suc");
+                       Timber.i("create suc");
                     } else {
-                        Logger.i("create failed");
+                        Timber.i("create failed");
                     }
                 }
 

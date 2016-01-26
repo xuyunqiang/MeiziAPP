@@ -1,10 +1,10 @@
-package com.yunq.gankio;
+package com.yunq.gankio.data;
 
-import com.yunq.gankio.data.GankData;
-import com.yunq.gankio.data.PrettyGirlData;
+import com.yunq.gankio.data.parse.GankData;
+import com.yunq.gankio.data.parse.PrettyGirlData;
 import com.yunq.gankio.data.entity.Gank;
 import com.yunq.gankio.data.entity.Girl;
-import com.yunq.gankio.data.休息视频Data;
+import com.yunq.gankio.data.parse.休息视频Data;
 
 import java.util.ArrayList;
 import java.util.List;

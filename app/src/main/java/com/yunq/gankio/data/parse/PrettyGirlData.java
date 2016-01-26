@@ -1,4 +1,4 @@
-package com.yunq.gankio.data;
+package com.yunq.gankio.data.parse;
 
 import com.yunq.gankio.data.entity.Girl;
 
