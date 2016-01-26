@@ -28,6 +28,7 @@
 ###依赖库   
 
 * [RxJava](https://github.com/ReactiveX/RxJava) 
+* [Dagger](https://github.com/square/dagger)
 * [OkHttp](https://github.com/square/okhttp)
 * [Picasso](https://github.com/square/picasso)
 * [Retrofit](https://github.com/square/retrofit)
