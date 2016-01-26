@@ -100,7 +100,10 @@ public class GirlFaceActivity extends BaseActivity implements IGirlFaceView {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        mPresenter.detachView();
         Picasso.with(this).cancelRequest(mIvGrilDetail);
         ButterKnife.unbind(this);
     }
+
+
 }

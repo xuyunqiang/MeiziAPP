@@ -106,9 +106,11 @@ public class WebActivity extends BaseSwipeRefreshActivity implements IWebView {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        mPresenter.detachView();
         if (mWebView != null) {
             mWebView.destroy();
         }
+        mPresenter.detachView();
         ButterKnife.unbind(this);
     }
 
@@ -152,4 +154,5 @@ public class WebActivity extends BaseSwipeRefreshActivity implements IWebView {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }

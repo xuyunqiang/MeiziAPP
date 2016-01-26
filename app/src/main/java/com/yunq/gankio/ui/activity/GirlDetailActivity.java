@@ -86,7 +86,7 @@ public class GirlDetailActivity extends BaseSwipeRefreshActivity implements IGan
     }
 
     private void initData() {
-        mPresenter.getData(TAG,mDate);
+        mPresenter.getData(TAG, mDate);
     }
 
     @Override
@@ -121,5 +121,11 @@ public class GirlDetailActivity extends BaseSwipeRefreshActivity implements IGan
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mPresenter.detachView();
     }
 }

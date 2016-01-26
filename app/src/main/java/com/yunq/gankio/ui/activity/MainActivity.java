@@ -206,4 +206,10 @@ public class MainActivity extends BaseSwipeRefreshActivity implements IMainView<
             GirlDetailActivity.gotoGankActivity(this, clickGirl.publishedAt);
         }
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mPresenter.detachView();
+    }
 }
