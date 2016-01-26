@@ -1,6 +1,6 @@
 ###MeiziAPP
 
-![icon](/app/src/main/res/mipmap-xxxhdpi/ic_launcher.jpg "")
+![icon](/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png "")
 
 每日提供技术干货的App
 
@@ -23,6 +23,24 @@
 那为什么不试着使用 MVP 去对代码进行进一步的优化呢，所以整个项目使用了 MVP 架构，将所有的数据请求、业务逻辑都提取到 Presenter 层中。同时加入了Dagger依赖注入，极大地方便了程序的开发，且对测试也很有帮助
 使用 MVP 后需要为每一个 Activity 编写一个对应一个 Presenter(控制器)类，让 Activity 担当纯粹的 View 角色，
 这样 Activity 就主要负责一些界面更新操作，具体的业务逻辑都交托给 Presenter 层处理，代码结构因此也变得更加清晰。
+
+
+###依赖库   
+
+* [RxJava](https://github.com/ReactiveX/RxJava) 
+* [Dagger](https://github.com/square/dagger)
+* [OkHttp](https://github.com/square/okhttp)
+* [Picasso](https://github.com/square/picasso)
+* [Retrofit](https://github.com/square/retrofit)
+* [Butterknife](https://github.com/JakeWharton/butterknife)
+* [Logger](https://github.com/orhanobut/logger)
+
+###参考资料
+
+* [drakeet/Meizhi](https://github.com/drakeet/Meizhi)
+* [浅谈 MVP in Android](http://blog.csdn.net/lmj623565791/article/details/46596109)
+* [Effective Android UI](https://github.com/pedrovgs/EffectiveAndroidUI)
+
 
 ### License
 
