@@ -23,9 +23,10 @@ import com.yunq.gankio.util.AndroidUtils;
 import javax.inject.Inject;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 
 public class WebActivity extends BaseSwipeRefreshActivity implements IWebView {
+
+    private static final String TAG = WebActivity.class.getSimpleName();
 
     private static final String EXTRA_URL = "URL";
     private static final String EXTRA_TITLE = "TITLE";
@@ -151,6 +152,16 @@ public class WebActivity extends BaseSwipeRefreshActivity implements IWebView {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        if (isRefreshing()) {
+            hideRefresh();
+            return;
+        }
+        super.onBackPressed();
     }
 
 }

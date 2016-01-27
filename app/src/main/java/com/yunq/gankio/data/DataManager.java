@@ -3,15 +3,12 @@ package com.yunq.gankio.data;
 import android.app.Application;
 import android.content.Context;
 
-import com.squareup.okhttp.Cache;
-import com.squareup.okhttp.OkHttpClient;
 import com.yunq.gankio.core.MeiziService;
-import com.yunq.gankio.data.parse.GankData;
-import com.yunq.gankio.data.parse.PrettyGirlData;
 import com.yunq.gankio.data.entity.Gank;
 import com.yunq.gankio.data.entity.Girl;
+import com.yunq.gankio.data.parse.GankData;
+import com.yunq.gankio.data.parse.PrettyGirlData;
 import com.yunq.gankio.data.parse.休息视频Data;
-import com.yunq.gankio.util.HttpUtils;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -20,12 +17,15 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+import okhttp3.OkHttpClient;
 import rx.Observable;
 import rx.functions.Func1;
 import rx.functions.Func2;
 
 /**
- * Created by admin on 16/1/25.
+ * Model层数据管理类，所有的数据变换操作全部放到这个类中，
+ * 但随着数据操作的增多，这个类会变得越来越臃肿，
+ * 我们可以可以将每组相关的数据操作抽取出来放到另一个类中去管理
  */
 @Singleton
 public class DataManager {
@@ -43,20 +43,22 @@ public class DataManager {
     }
 
     private void setCacheMode() {
-        mClient.setCache(new Cache(mContext.getCacheDir(), Runtime.getRuntime().maxMemory() / 8));
-        mClient.interceptors().add(HttpUtils.getCacheInterceptor(mContext));
+
+      //  mClient.setCache(new Cache(mContext.getCacheDir(), Runtime.getRuntime().maxMemory() / 8));
+     //   mClient.interceptors().add(HttpUtils.getCacheInterceptor(mContext));
+
     }
 
-    public void cancelRequest(String tag) {
-        mClient.cancel(tag);
+    public void cancelRequest() {
+       mClient.dispatcher().cancelAll();
     }
 
     /**
      * MainActivity中获取所有Girls
      */
-    public Observable<List<Girl>> getGirls(String tag,int pageSize, int currentPage) {
-        return Observable.zip(mMeiziService.getPrettyGirlData(pageSize, currentPage,tag),
-                mMeiziService.get休息视频Data(pageSize, currentPage,tag),
+    public Observable<List<Girl>> getGirls(int pageSize, int currentPage) {
+        return Observable.zip(mMeiziService.getPrettyGirlData(pageSize, currentPage),
+                mMeiziService.get休息视频Data(pageSize, currentPage),
                 new Func2<PrettyGirlData, 休息视频Data, PrettyGirlData>() {
                     @Override
                     public PrettyGirlData call(PrettyGirlData prettyGirlData, 休息视频Data 休息视频Data) {
@@ -86,14 +88,14 @@ public class DataManager {
     /**
      * GankDetailActivity
      */
-    public Observable<List<Gank>> getGankData(String tag,Date date) {
+    public Observable<List<Gank>> getGankData(Date date) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         int year = calendar.get(Calendar.YEAR);
         int month = calendar.get(Calendar.MONTH) + 1;
         int day = calendar.get(Calendar.DAY_OF_MONTH);
 
-        return mMeiziService.getGankData(year, month, day,tag)
+        return mMeiziService.getGankData(year, month, day)
                 .map(new Func1<GankData, GankData.Result>() {
                     @Override
                     public GankData.Result call(GankData gankData) {

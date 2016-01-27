@@ -1,26 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" >
-
-    <item
-        jar="/Users/admin/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.1.0/748f0546d5c3c27f1aef07270ffea0c45f0c42a4/rxjava-1.1.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="748f0546d5c3c27f1aef07270ffea0c45f0c42a4">
-        <dex dex="/Users/admin/WorkSpace/MeiziAPP/app/build/intermediates/pre-dexed/debug/rxjava-1.1.0-e4676d42c1a23c83a3115d5648f9f9689b9e40bf.jar" />
-    </item>
-    <item
-        jar="/Users/admin/WorkSpace/MeiziAPP/app/build/intermediates/exploded-aar/com.jakewharton.timber/timber/4.1.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="f45a0143e9c43a459f3f331a6b3e7daf13981ef4">
-        <dex dex="/Users/admin/WorkSpace/MeiziAPP/app/build/intermediates/pre-dexed/debug/classes-3bd4bf0b55304fac45044eed6b08d789a8222a62.jar" />
-    </item>
-    <item
-        jar="/Users/admin/WorkSpace/MeiziAPP/app/build/intermediates/exploded-aar/io.reactivex/rxandroid/1.1.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="d4c4b83de2f6412072d2a29b1b7a5b03edaad5ff">
-        <dex dex="/Users/admin/WorkSpace/MeiziAPP/app/build/intermediates/pre-dexed/debug/classes-bf43c8aac7f95ca94f8f8bbf9b65bdca472824bc.jar" />
-    </item>
-
-</items>
+<items version="2" />

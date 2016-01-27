@@ -41,8 +41,8 @@ public class GankApp extends Application {
         return (GankApp) context.getApplicationContext();
     }
 
-    public RefWatcher getRefWatcher() {
-        return refWatcher;
+    public static RefWatcher getRefWatcher(Context context) {
+        return ((GankApp) context.getApplicationContext()).refWatcher;
     }
 
     public ApplicationComponent getComponent() {

@@ -24,7 +24,7 @@ public class BasePresenter<T extends IBaseView> implements Presenter<T> {
         if (mSubscriptions != null && !mSubscriptions.isUnsubscribed()) {
             mSubscriptions.unsubscribe();
         }
-        mView = null;
+     //   mView = null;
     }
 
     public T getView() {

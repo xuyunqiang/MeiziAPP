@@ -2,13 +2,12 @@ package com.yunq.gankio.util;
 
 import android.content.Context;
 
-import com.squareup.okhttp.CacheControl;
-import com.squareup.okhttp.HttpUrl;
-import com.squareup.okhttp.Interceptor;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.Response;
-
 import java.io.IOException;
+
+import okhttp3.CacheControl;
+import okhttp3.Interceptor;
+import okhttp3.Request;
+import okhttp3.Response;
 
 /**
  * Created by admin on 16/1/21.
@@ -20,17 +19,18 @@ public class HttpUtils {
     public static Interceptor getCacheInterceptor(final Context context) {
         return new Interceptor() {
             @Override
-            public Response intercept(Chain chain) throws IOException {
+            public Response intercept(Interceptor.Chain chain) throws IOException {
                 Request request = chain.request();
-                String tag = request.httpUrl().queryParameter("TAG");
 
-                HttpUrl.Builder urlBuilder = request.httpUrl().newBuilder()
-                        .removeAllQueryParameters("TAG");
-
-                request = request.newBuilder()
-                        .url(urlBuilder.build())
-                        .tag(tag)
-                        .build();
+//                String tag = request.url().queryParameter("TAG");
+//
+//                HttpUrl.Builder urlBuilder = request.url().newBuilder()
+//                        .removeAllQueryParameters("TAG");
+//
+//                request = request.newBuilder()
+//                        .url(urlBuilder.build())
+//                        .tag(tag)
+//                        .build();
 
                 if (!NetworkUtil.isNetworkConnected(context)) {
                     request = request.newBuilder()
@@ -56,6 +56,8 @@ public class HttpUtils {
                 }
               //  Log.e("response", "response");
                 return response;
+
+
             }
         };
     }

@@ -19,7 +19,7 @@ import javax.inject.Inject;
 public class WebPresenter extends BasePresenter<IWebView> {
 
     @Inject
-    public WebPresenter(){
+    public WebPresenter() {
 
     }
 
@@ -72,7 +72,7 @@ public class WebPresenter extends BasePresenter<IWebView> {
         public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
             super.onReceivedError(view, request, error);
             mView.hideRefresh();
-            mView.showLoadErrorMessage(error.getErrorCode()+"");
+            mView.showLoadErrorMessage(error.toString());
         }
     }
 }

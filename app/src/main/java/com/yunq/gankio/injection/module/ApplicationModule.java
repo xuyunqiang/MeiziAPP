@@ -2,12 +2,11 @@ package com.yunq.gankio.injection.module;
 
 import android.app.Application;
 
-import com.squareup.okhttp.OkHttpClient;
-
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import okhttp3.OkHttpClient;
 
 /**
  * Created by admin on 16/1/25.

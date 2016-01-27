@@ -86,7 +86,7 @@ public class GirlDetailActivity extends BaseSwipeRefreshActivity implements IGan
     }
 
     private void initData() {
-        mPresenter.getData(TAG, mDate);
+        mPresenter.getData(mDate);
     }
 
     @Override
@@ -127,5 +127,15 @@ public class GirlDetailActivity extends BaseSwipeRefreshActivity implements IGan
     protected void onDestroy() {
         super.onDestroy();
         mPresenter.detachView();
+    }
+
+    @Override
+    public void onBackPressed() {
+//        if (isRefreshing()) {
+//            GankApp.get(this).getComponent().dataManager().cancelRequest();
+//            hideRefresh();
+//            return;
+//        }
+        super.onBackPressed();
     }
 }

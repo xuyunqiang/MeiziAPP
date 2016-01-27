@@ -69,6 +69,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         ButterKnife.unbind(this);
-        GankApp.get(this).getRefWatcher().watch(this);
+        GankApp.getRefWatcher(this).watch(this);
     }
 }

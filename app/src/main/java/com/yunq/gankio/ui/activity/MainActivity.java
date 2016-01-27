@@ -1,7 +1,6 @@
 package com.yunq.gankio.ui.activity;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.CheckResult;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
@@ -85,7 +84,8 @@ public class MainActivity extends BaseSwipeRefreshActivity implements IMainView<
                 if (!mSwipeRefreshLayout.isRefreshing() && isBottom && mHasMoreData) {
                     if (!mIsFirstTimeTouchBottom) {
                         showRefresh();
-                        mPresenter.getDataMore(TAG);
+                        mPresenter.getDataMore();
+
                     } else {
                         mIsFirstTimeTouchBottom = false;
                     }
@@ -97,13 +97,13 @@ public class MainActivity extends BaseSwipeRefreshActivity implements IMainView<
     @Override
     public void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                showRefresh();
-            }
-        }, 558);
-
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                showRefresh();
+//            }
+//        }, 558);
+        showRefresh();
         mPresenter.refillGirls(TAG);
     }
 
@@ -211,5 +211,18 @@ public class MainActivity extends BaseSwipeRefreshActivity implements IMainView<
     protected void onDestroy() {
         super.onDestroy();
         mPresenter.detachView();
+    }
+
+    @Override
+    public void onBackPressed() {
+//     if (isRefreshing()) {
+//            GankApp.get(this)
+//                    .getComponent()
+//                    .dataManager()
+//                    .cancelRequest();
+//            hideRefresh();
+//            return;
+//        }
+        super.onBackPressed();
     }
 }

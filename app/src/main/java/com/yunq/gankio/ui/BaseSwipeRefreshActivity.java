@@ -45,12 +45,27 @@ public abstract class BaseSwipeRefreshActivity extends BaseActivity implements I
 
     @Override
     public void hideRefresh() {
-        mSwipeRefreshLayout.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                mSwipeRefreshLayout.setRefreshing(false);
-            }
-        }, 1000);
+
+        if (mSwipeRefreshLayout != null) {
+            mSwipeRefreshLayout.setRefreshing(false);
+        }
+
+//        Observable.timer(1, TimeUnit.SECONDS)
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(new Action1<Long>() {
+//                    @Override
+//                    public void call(Long aLong) {
+//                        if (mSwipeRefreshLayout != null) {
+//                    mSwipeRefreshLayout.setRefreshing(false);
+//                }
+//            }
+//        });
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                mSwipeRefreshLayout.setRefreshing(false);
+//            }
+//        }, 1000);
     }
 
     @Override

@@ -66,7 +66,7 @@ public class CustomWebViewDialog extends DialogFragment implements ICustomDialog
     @Override
     public void onDestroy() {
         super.onDestroy();
-        GankApp.get(mContext).getRefWatcher().watch(this);
+        GankApp.getRefWatcher(mContext).watch(this);
         mPresenter.detachView();
     }
 }

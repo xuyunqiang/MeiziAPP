@@ -25,8 +25,8 @@ public class GankDetailPresenter extends BasePresenter<IGankDetailView> {
         mDataManager = dataManager;
     }
 
-    public void getData(String tag,Date date) {
-        addSubscription(mDataManager.getGankData(tag,date)
+    public void getData(Date date) {
+        addSubscription(mDataManager.getGankData(date)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(new Subscriber<List<Gank>>() {

@@ -9,7 +9,6 @@ import java.util.List;
 import javax.inject.Inject;
 
 import rx.Subscriber;
-import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action0;
 import rx.functions.Action1;
@@ -26,10 +25,6 @@ public class MainPresenter extends BasePresenter<IMainView> {
 
     private static final int PAGE_SIZE = 10;
 
-
-    //    public MainPresenter(Context context, IMainView view) {
-//        super(context, view);
-//    }
     @Inject
     public MainPresenter(DataManager dataManager) {
         mDataManager = dataManager;
@@ -50,7 +45,7 @@ public class MainPresenter extends BasePresenter<IMainView> {
 
     public void refillGirls(String tag) {
 
-        addSubscription( mDataManager.getGirls(tag,PAGE_SIZE, mCurrentPage)
+        addSubscription( mDataManager.getGirls(PAGE_SIZE, mCurrentPage)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(new Subscriber<List<Girl>>() {
@@ -82,10 +77,12 @@ public class MainPresenter extends BasePresenter<IMainView> {
                 }));
     }
 
-    public void getDataMore(String tag) {
+    public void getDataMore() {
 
-        Subscription subscription = mDataManager.getGirls(tag,PAGE_SIZE, mCurrentPage)
-                .subscribeOn(Schedulers.newThread())
+        addSubscription(
+                mDataManager.getGirls(PAGE_SIZE, mCurrentPage)
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                         //可以在接收事件之前，在主线程中执行初始化代码
                 .doOnSubscribe(new Action0() {
@@ -129,25 +126,8 @@ public class MainPresenter extends BasePresenter<IMainView> {
 
                         mView.getDataFinish();
                     }
-                });
-
-        addSubscription(subscription);
+                }));
 
     }
-
-//    private PrettyGirlData createGirlInfoWith休息视频(PrettyGirlData girlData, 休息视频Data data) {
-//
-//        int restSize = data.results.size();
-//
-//        for (int i = 0; i < girlData.results.size(); i++) {
-//            if (i <= restSize - 1) {
-//                Girl girl = girlData.results.get(i);
-//                girl.desc += " " + data.results.get(i).desc;
-//            } else {
-//                break;
-//            }
-//        }
-//        return girlData;
-//    }
 
 }
