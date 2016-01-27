@@ -16,6 +16,9 @@
 整个项目借鉴自 @drakeet 的[妹纸](https://github.com/drakeet/Meizhi)。但是在原项目基础上，
 自己在代码层面和UI层面上做了自己的修改。
 
+##效果图
+![Meizi](http://7xq7wz.com1.z0.glb.clouddn.com/Meizi2.gif)
+
 ####代码设计
 
 原项目使用 Retrofit+RxJava 的组合获取网络数据，再加上使用Lambda表达式，代码已经变得很精简，所以把获取数据的代码放在 Activity 中也不显得混乱，
