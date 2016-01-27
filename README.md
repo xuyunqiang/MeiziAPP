@@ -17,7 +17,7 @@
 自己在代码层面和UI层面上做了自己的修改。
 
 ##效果图
-![Meizi](http://7xq7wz.com1.z0.glb.clouddn.com/Meizi2.gif)
+![Meizi](http://7xq7wz.com1.z0.glb.clouddn.com/Meizi.gif)
 
 ####代码设计
 
