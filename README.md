@@ -22,7 +22,7 @@
 此项目通过Retrofit进行普通数据的网络请求，Picasso进行图片加载，Dagger通过注解的方式进行依赖注入
 整个项目结构很清晰，不过还有很多方面有待完善，后面将写一遍关于android架构方面的文章，尽请期待。
 
-PS（通过对Retrofit beta2.0 及Okhttp2.5源码分析，得出要通过HttpClient.cancel(TAG)请求的方式是无效的，
+PS（通过对Retrofit beta2.0 及Okhttp2.5源码分析，得出要通过HttpClient.cancel(TAG)取消请求的方式是无效的，
 具体原因将在后期博客会写到，同时也会讲解采用Retrofit-beta3.0版本就能及时取消网络请求的关键源码）
 
 
