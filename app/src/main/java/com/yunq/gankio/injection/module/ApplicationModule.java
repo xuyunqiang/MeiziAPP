@@ -2,10 +2,13 @@ package com.yunq.gankio.injection.module;
 
 import android.app.Application;
 
+import com.yunq.gankio.util.HttpUtils;
+
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import okhttp3.Cache;
 import okhttp3.OkHttpClient;
 
 /**
@@ -32,8 +35,11 @@ public class ApplicationModule {
 
     @Provides
     @Singleton
-    OkHttpClient provideOkHttpClient(){
-        return new OkHttpClient();
+    OkHttpClient provideOkHttpClient() {
+        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+        builder.cache(new Cache(mApplication.getCacheDir(), 10 * 1024 * 1024));
+        builder.addInterceptor(HttpUtils.getCacheInterceptor(mApplication));
+        return builder.build();
     }
 
 

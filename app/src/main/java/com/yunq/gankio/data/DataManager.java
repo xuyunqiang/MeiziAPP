@@ -1,8 +1,5 @@
 package com.yunq.gankio.data;
 
-import android.app.Application;
-import android.content.Context;
-
 import com.yunq.gankio.core.MeiziService;
 import com.yunq.gankio.data.entity.Gank;
 import com.yunq.gankio.data.entity.Girl;
@@ -29,25 +26,16 @@ import rx.functions.Func2;
  */
 @Singleton
 public class DataManager {
-    private final Context mContext;
     private final OkHttpClient mClient;
 
     private final MeiziService mMeiziService;
 
     @Inject
-    public DataManager(Application context, OkHttpClient client) {
-        mContext = context;
+    public DataManager(OkHttpClient client) {
         mClient = client;
-        setCacheMode();
         mMeiziService = MeiziService.Creator.newGudongService(client);
     }
 
-    private void setCacheMode() {
-
-      //  mClient.setCache(new Cache(mContext.getCacheDir(), Runtime.getRuntime().maxMemory() / 8));
-     //   mClient.interceptors().add(HttpUtils.getCacheInterceptor(mContext));
-
-    }
 
     public void cancelRequest() {
        mClient.dispatcher().cancelAll();
