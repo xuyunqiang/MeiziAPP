@@ -94,8 +94,8 @@
       <file leaf-file-name="GirlFaceActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/yunq/gankio/ui/activity/GirlFaceActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.68257755">
-              <caret line="99" column="32" selection-start-line="99" selection-start-column="32" selection-end-line="99" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.80966324">
+              <caret line="98" column="4" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -1775,7 +1775,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/yunq/gankio/injection/component/ActivityComponent.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/yunq/gankio/DataManager.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/yunq/gankio/ui/activity/GirlFaceActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/yunq/gankio/presenter/GirlFacePresenter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/yunq/gankio/presenter/WebPresenter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/yunq/gankio/ui/BaseSwipeRefreshActivity.java" />
@@ -1796,6 +1795,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/yunq/gankio/injection/module/ApplicationModule.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/yunq/gankio/ui/activity/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/yunq/gankio/ui/activity/GirlDetailActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/yunq/gankio/ui/activity/GirlFaceActivity.java" />
       </list>
     </option>
   </component>
@@ -2565,7 +2565,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17898384" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17898384" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290993" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -3070,8 +3070,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/yunq/gankio/ui/activity/GirlFaceActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.68257755">
-          <caret line="99" column="32" selection-start-line="99" selection-start-column="32" selection-end-line="99" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.80966324">
+          <caret line="98" column="4" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="4" />
           <folding />
         </state>
       </provider>
