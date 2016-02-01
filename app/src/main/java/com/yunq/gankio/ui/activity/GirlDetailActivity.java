@@ -131,11 +131,11 @@ public class GirlDetailActivity extends BaseSwipeRefreshActivity implements IGan
 
     @Override
     public void onBackPressed() {
-//        if (isRefreshing()) {
-//            GankApp.get(this).getComponent().dataManager().cancelRequest();
-//            hideRefresh();
-//            return;
-//        }
+        if (isRefreshing()) {
+            GankApp.get(this).getComponent().dataManager().cancelRequest();
+            hideRefresh();
+            return;
+        }
         super.onBackPressed();
     }
 }

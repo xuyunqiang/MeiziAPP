@@ -215,14 +215,14 @@ public class MainActivity extends BaseSwipeRefreshActivity implements IMainView<
 
     @Override
     public void onBackPressed() {
-//     if (isRefreshing()) {
-//            GankApp.get(this)
-//                    .getComponent()
-//                    .dataManager()
-//                    .cancelRequest();
-//            hideRefresh();
-//            return;
-//        }
+        if (isRefreshing()) {
+            GankApp.get(this)
+                    .getComponent()
+                    .dataManager()
+                    .cancelRequest();
+            hideRefresh();
+            return;
+        }
         super.onBackPressed();
     }
 }
