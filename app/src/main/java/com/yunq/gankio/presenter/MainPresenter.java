@@ -43,7 +43,7 @@ public class MainPresenter extends BasePresenter<IMainView> {
         return mCurrentPage <= 2;
     }
 
-    public void refillGirls(String tag) {
+    public void refillGirls() {
 
         addSubscription( mDataManager.getGirls(PAGE_SIZE, mCurrentPage)
                 .observeOn(AndroidSchedulers.mainThread())
@@ -107,7 +107,12 @@ public class MainPresenter extends BasePresenter<IMainView> {
 
                     @Override
                     public void onError(Throwable e) {
-                        mView.showErrorView(e);
+                        if("Canceled".equals(e.getMessage())){
+                           mView.showCancelRequest();
+                        }else{
+                            mView.showErrorView(e);
+                        }
+
                         mView.getDataFinish();
 
                     }

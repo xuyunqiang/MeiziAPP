@@ -16,6 +16,7 @@
     <string name="toast_open_fail">打开链接失败</string>
     <string name="empty_data_of_girls">妹子还没有准备好</string>
     <string name="error_index_load">无法加载数据，请检查网络连接。点击可重试。</string>
+    <string name="error_cancel_request">您已取消此次请求，点击可重试</string>
     <string name="no_more_girls">妹子见底了，没有更多啦。</string>
     <string name="action_to_top">返回顶部</string>
     <string name="picture_save_fail">图片保存失败，请再次尝试保存！</string>

@@ -15,4 +15,5 @@ public interface IMainView<T extends Soul> extends ISwipeRefreshView {
 
     void hasNoMoreData();
 
+
 }

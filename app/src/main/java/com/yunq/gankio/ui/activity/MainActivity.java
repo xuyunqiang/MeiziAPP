@@ -104,7 +104,7 @@ public class MainActivity extends BaseSwipeRefreshActivity implements IMainView<
 //            }
 //        }, 558);
         showRefresh();
-        mPresenter.refillGirls(TAG);
+        mPresenter.refillGirls();
     }
 
     @Override
@@ -181,8 +181,22 @@ public class MainActivity extends BaseSwipeRefreshActivity implements IMainView<
     }
 
     @Override
+    public void showCancelRequest() {
+        final Snackbar errorSnack = Snackbar.make(mRcvIndexContent, R.string.error_cancel_request, Snackbar.LENGTH_INDEFINITE);
+        errorSnack.getView().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                errorSnack.dismiss();
+                onRefreshStarted();
+            }
+        });
+
+        errorSnack.show();
+    }
+
+    @Override
     protected void onRefreshStarted() {
-        mPresenter.refillGirls(TAG);
+        mPresenter.getDataMore();
     }
 
 

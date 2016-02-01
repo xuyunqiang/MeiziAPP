@@ -96,7 +96,7 @@ public class GirlFaceActivity extends BaseActivity implements IGirlFaceView {
         return super.onOptionsItemSelected(item);
     }
 
-    
+
     @Override
     protected void onDestroy() {
         super.onDestroy();

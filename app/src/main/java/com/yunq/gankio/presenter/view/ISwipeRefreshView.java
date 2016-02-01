@@ -14,4 +14,6 @@ public interface ISwipeRefreshView extends IBaseView {
     void showRefresh();
 
     void hideRefresh();
+
+    void showCancelRequest();
 }

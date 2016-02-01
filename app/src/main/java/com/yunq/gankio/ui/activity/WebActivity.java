@@ -98,6 +98,11 @@ public class WebActivity extends BaseSwipeRefreshActivity implements IWebView {
         throwable.printStackTrace();
     }
 
+    @Override
+    public void showCancelRequest() {
+        
+    }
+
 
     @Override
     public void showLoadErrorMessage(String message) {

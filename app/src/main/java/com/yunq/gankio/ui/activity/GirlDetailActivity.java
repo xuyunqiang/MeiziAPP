@@ -105,6 +105,11 @@ public class GirlDetailActivity extends BaseSwipeRefreshActivity implements IGan
         throwable.printStackTrace();
     }
 
+    @Override
+    public void showCancelRequest() {
+
+    }
+
 
     @Override
     public void fillData(List<Gank> data) {
