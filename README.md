@@ -34,7 +34,6 @@ PS（通过对Retrofit beta2.0 及Okhttp2.5源码分析，得出要通过HttpCli
 * [Picasso](https://github.com/square/picasso)
 * [Retrofit](https://github.com/square/retrofit)
 * [Butterknife](https://github.com/JakeWharton/butterknife)
-* [Logger](https://github.com/orhanobut/logger)
 
 ###参考资料
 
